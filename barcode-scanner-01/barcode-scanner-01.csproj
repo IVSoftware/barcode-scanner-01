@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>barcode_scanner_00</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BarcodeLib" Version="2.4.0" />
+    <PackageReference Include="QRCoder" Version="1.4.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Screenshots\" />
+  </ItemGroup>
+
+</Project>
