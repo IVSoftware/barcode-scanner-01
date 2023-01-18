@@ -3,7 +3,10 @@ Scan detector requirements:
 - Works for both barcodes and QR codes
 - Works whether or not there is a focused `TextBox` to receive incoming key events.
 
-Install a MessageFilter for the main form in order to intercept WM_KEYDOWN and append the key code to a `Buffer` class.
+***
+**SOLUTION**
+
+Install a MessageFilter for the main form in order to intercept WM_CHAR and append the char code to `StringBuilder` class.
 
     public partial class BarcodeScannerForm : Form, IMessageFilter
     {        
