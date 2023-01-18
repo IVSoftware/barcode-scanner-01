@@ -1,9 +1,6 @@
 using QRCoder;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 using static QRCoder.QRCodeGenerator;
 
 namespace barcode_scanner_00
