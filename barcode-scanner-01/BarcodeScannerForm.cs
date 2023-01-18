@@ -15,14 +15,15 @@ namespace barcode_scanner_00
             Disposed += (sender, e) => Application.RemoveMessageFilter(this);
             // Create the visible codes.
             initImages();
-            _buffer = new Buffer(this);
         }
-        private readonly Buffer _buffer;
+        private readonly StringBuilder _buffer = new StringBuilder();
         const int WM_CHAR = 0x0102;
         public bool PreFilterMessage(ref Message m)
         {
-            // if(m.Msg.Equals(WM_KEYDOWN)) detectScan((char)m.WParam);
+            // SOLUTION DO THIS (Thanks Jimi!)
             if (m.Msg.Equals(WM_CHAR)) detectScan((char)m.WParam);
+            // NOT THIS
+            // if(m.Msg.Equals(WM_KEYDOWN)) detectScan((char)m.WParam);
             return false;
         }
         private void detectScan(char @char)
@@ -41,7 +42,7 @@ namespace barcode_scanner_00
                         _keyCount = 0;
                         if(_buffer.Length > SCAN_MIN_LENGTH)
                         {
-                            BeginInvoke(()=>MessageBox.Show(_buffer.Text));
+                            BeginInvoke(()=>MessageBox.Show(_buffer.ToString()));
                         }
                     }
                 });
@@ -85,18 +86,5 @@ namespace barcode_scanner_00
             var image = new Bitmap(qrCode.GetGraphic(20), pictureBoxQR.Size);
             pictureBoxQR.Image = image;
         }
-    }
-    class Buffer
-    {
-        StringBuilder _sbScan = new StringBuilder();
-        public void Append(char @char)
-        {
-            _sbScan.Append(@char);
-        }
-        public string Text => _sbScan.ToString(); 
-        public int Length => _sbScan.Length;
-        public void Clear() => _sbScan.Clear();
-        // The owner arg is not used but now it can be constucted the same.
-        public Buffer(Form owner){ } // 
     }
 }
