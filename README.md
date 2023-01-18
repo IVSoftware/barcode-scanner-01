@@ -1,4 +1,4 @@
-![screenshot](https://github.com/IVSoftware/barcode-scanner-01/blob/master/barcode-scanner-01/Screenshots/screenshot.png)
+![screenshot](https://github.com/IVSoftware/barcode-scanner-01/blob/master/barcode-scanner-01/Screenshots/screenshot-a.png)
 
 Scan detector requirements:
 
