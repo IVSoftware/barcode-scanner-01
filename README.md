@@ -16,8 +16,8 @@ Install a MessageFilter for the main form in order to intercept WM_CHAR and appe
             // Add message filter to hook WM_KEYDOWN events.
             Application.AddMessageFilter(this);
             Disposed += (sender, e) => Application.RemoveMessageFilter(this);
-            _buffer = new Buffer(this);
         }
+        private readonly StringBuilder _buffer = new StringBuilder();
         const int WM_CHAR = 0x0102;
         public bool PreFilterMessage(ref Message m)
         {
