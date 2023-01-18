@@ -1,3 +1,5 @@
+![screenshot](https://github.com/IVSoftware/barcode-scanner-01/blob/master/barcode-scanner-01/Screenshots/screenshot.png)
+
 Scan detector requirements:
 
 - Works for both barcodes and QR codes
